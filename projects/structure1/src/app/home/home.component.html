@@ -1,0 +1,75 @@
+<div class="main col-lg-12 col-sm-12 col-md-12">
+  <div class="row content">
+    <div class="col-sm-2 col-md-2 sidenav backgroundcolor pad-0">
+      <ul class="nav nav-pills nav-stacked font-sidenave heightSide">
+        <li class="pad-0 white">
+          <img src="./assets/img/logo@2x.png" class="center">
+        </li>
+
+        <!--start of Admin menu-->
+
+        <ng-container>
+
+          <li>
+            <a [routerLink]="['dashboard']" [ngClass]="(menu == 'dashboard')?'active-selected':'deactive-selected'"
+              (click)="dash('dashboard')">
+              <img src="assets/img/Dashboard.png" />
+              <span class="leftpad"> Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a [routerLink]="['User_Management']"
+              [ngClass]="(menu == 'User_Management')?'active-selected':'deactive-selected'"
+              (click)="usermanagement('User_Management')">
+              <img src="assets/img/User_Management.png" />
+              <span class="leftpad paduser"> User Management </span>
+            </a>
+          </li>
+        </ng-container>
+
+        <!--end of Admin menu-->
+
+      </ul>
+    </div>
+
+    <div class="col-sm-10  col-md-10 col-lg-10 menu pad-0">
+      <div class="panel panel-default navbar-fixed-top hgh-top">
+        <div class="panel-body">
+          <ul class="nav navbar-nav right-panel">
+            <li>
+              <a href="#" class="navbar-left pad">
+                <img src="assets/img/notification.png" class="imgWidht">
+              </a>
+            </li>
+            <li>
+              <a class="navbar-left pad">
+                <img src="assets/img/settings.png" class="imgWidht" (click)="settings()">
+              </a>
+            </li>
+            <li class="navbar-user-dropdown">
+              <div class="dropdown">
+                <span class="dropbtn">User Name
+                  <img src="assets/img/small-down.png" />
+                </span>
+                <div class="dropdown-content">
+                  <a (click)="logout();">Logout</a>
+                </div>
+              </div>
+
+            </li>
+            <li>
+              <a href="#" class="navbar-left pad">
+                <img src="assets/img/Avatar.png" class="avatar-img">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="Display">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
